@@ -182,3 +182,14 @@ def test_min_joltage_path():
         ),
     ]
     assert min_joltage_path(*machine) == 11
+
+    machine = [
+        [10000, 10000],
+        list(
+            map(
+                lambda e: parse_button_mask(2, e),
+                "(0) (0,1) (1)".split(" "),
+            )
+        ),
+    ]
+    assert min_joltage_path(*machine) == 10000
