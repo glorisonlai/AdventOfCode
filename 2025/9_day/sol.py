@@ -21,6 +21,12 @@ def part1(coords: list[tuple[int, ...]]) -> int:
     return max_area
 
 
+def part2(coords: list[tuple[int, ...]]) -> int:
+    for i in range(len(coords)):
+        for j in range(i + 1, len(coords)):
+            max_area = max(area(coords[i], coords[j]), max_area)
+
+
 if __name__ == "__main__":
     main()
 
